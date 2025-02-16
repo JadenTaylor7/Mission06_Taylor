@@ -23,10 +23,17 @@ namespace Mission06_Taylor.Controllers
             return View();
         }
 
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
+        [HttpGet]
+        public IActionResult EnterMovie()
         {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+            return View();
+        }
+
+
+        [HttpPost]
+        public IActionResult EnterMovie(Application response)
+        {
+            return View("Confirmation", response);
         }
     }
 }
