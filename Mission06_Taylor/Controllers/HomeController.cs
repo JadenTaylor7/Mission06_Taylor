@@ -18,7 +18,7 @@ namespace Mission06_Taylor.Controllers
             return View();
         }
 
-        public IActionResult Privacy()
+        public IActionResult GetToKnow()
         {
             return View();
         }
