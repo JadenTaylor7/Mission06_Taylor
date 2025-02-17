@@ -6,11 +6,11 @@ namespace Mission06_Taylor.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
+        private MovieTitlesContext _context;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(MovieTitlesContext someName) //Constructor
         {
-            _logger = logger;
+            _context = someName;
         }
 
         public IActionResult Index()
@@ -33,6 +33,8 @@ namespace Mission06_Taylor.Controllers
         [HttpPost]
         public IActionResult EnterMovie(Application response)
         {
+            _context.Applications.Add(response); //Add record to the database
+            _context.SaveChanges(); //Commits changes to database
             return View("Confirmation", response);
         }
     }

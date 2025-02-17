@@ -1,7 +1,18 @@
+using Microsoft.EntityFrameworkCore;
+using Mission06_Taylor.Models;
+
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+
+builder.Services.AddDbContext<MovieTitlesContext>(options =>
+{
+    options.UseSqlite(builder.Configuration["ConnectionStrings:MovieConnection"]);
+});
+
 
 var app = builder.Build();
 
