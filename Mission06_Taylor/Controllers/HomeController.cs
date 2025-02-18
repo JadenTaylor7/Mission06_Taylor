@@ -12,7 +12,7 @@ namespace Mission06_Taylor.Controllers
         {
             _context = someName;
         }
-
+        //lolololo
         public IActionResult Index()
         {
             return View();
