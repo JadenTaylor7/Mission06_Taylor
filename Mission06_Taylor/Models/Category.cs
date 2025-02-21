@@ -1,8 +1,11 @@
-﻿namespace Mission06_Taylor.Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace Mission06_Taylor.Models
 {
     public class Category
     {
         public int CategoryId { get; set; }
-        public string CategoryName { get; set; }
+        [Required]
+        public required string CategoryName { get; set; }
     }
 }

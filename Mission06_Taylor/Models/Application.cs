@@ -11,7 +11,7 @@ namespace Mission06_Taylor.Models
 
         [ForeignKey("CategoryId")]
         public int? CategoryId { get; set; }
-        public Category? CategoryName { get; set; }
+        public Category? Category { get; set; }
         public string Title { get; set; }
         [Range(1000, 2027)]
         public int Year { get; set; }

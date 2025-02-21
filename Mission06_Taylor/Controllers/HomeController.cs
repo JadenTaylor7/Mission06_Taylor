@@ -61,9 +61,10 @@ namespace Mission06_Taylor.Controllers
         {
             //todo: get CategoryName id to work
             //Linq
+            
             var someMovies = _context.Movies
-                .Include(navigationPropertyPath: x => x.CategoryName)
-                .OrderBy(x => x.CategoryName).ToList();
+                .Include(x => x.Category)
+                .OrderBy(x => x.Category.CategoryName).ToList();
 
             return View("MovieCollection", someMovies);
         }
